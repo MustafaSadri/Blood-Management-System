@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Blood Camps</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #C72C41;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        li:hover {
+            transform: scale(1.02); /* Slightly increase size on hover */
+        }
+
+        p {
+            margin: 5px 0; /* Spacing between paragraphs */
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #A82333; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h3>Upcoming Blood Camps</h3>
+
+    <ul>
+        <% for (let camp of camps) { %>
+            <li>
+                <h3><%= camp.name %></h3>
+                <p>Location: <%= camp.location %></p>
+                <p>Date: <%= camp.date.toDateString() %></p>
+                <p>Description: <%= camp.description %></p>
+            </li>            
+        <% } %>
+    </ul>
+
+    <a href="/user/dashboard" class="back-button">Back to Dashboard</a>
+</body>
+</html>

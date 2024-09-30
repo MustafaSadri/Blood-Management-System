@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Login</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #C72C41;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
+
+        button {
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%; /* Full width for the button */
+        }
+
+        button:hover {
+            background-color: #A82333; /* Darker shade on hover */
+        }
+
+        /* Optional: Style for the registration link */
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Volunteer Login</h1>
+    <form action="/volunteer/login" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+    <!-- Uncomment to include the registration link -->
+    <!-- <a href="/volunteer/register">Don't have an account? Register here</a> -->
+</body>
+</html>

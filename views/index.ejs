@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Management System</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #C72C41;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #A82333;
+        }
+    </style>
+</head>
+<body>
+    <form action="/role" method="POST">
+        <h1>Welcome to Blood Management System</h1>
+        <button type="submit" name="role" value="user">User</button>
+        <button type="submit" name="role" value="volunteer">Volunteer</button>
+        <button type="submit" name="role" value="admin">Admin</button>
+        <button type="submit" name="role" value="hospital">Hospital</button>
+    </form>
+</body>
+</html>

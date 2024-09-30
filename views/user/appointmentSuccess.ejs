@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Successful</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #C72C41;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #A82333; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointment Successful!</h1>
+
+    <% if (alreadyAppointed) { %>
+        <p>You have already appointed this camp.</p>
+    <% } else { %>
+        <p>You have successfully appointed the camp: <strong><%= camp.name %></strong></p>
+    <% } %>
+
+    <a href="/user/dashboard">Back to Dashboard</a>
+</body>
+</html>

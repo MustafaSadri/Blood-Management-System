@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #C72C41;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .actions {
+            flex: 1;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Spacing between buttons */
+        }
+
+        button {
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            width: 100%; /* Full width buttons */
+        }
+
+        button:hover {
+            background-color: #A82333;
+        }
+
+        .awareness {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+        }
+
+        .awareness:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+        }
+
+        .awareness h2 {
+            color: #C72C41;
+            margin-top: 0;
+        }
+
+        .awareness p {
+            margin: 10px 0;
+        }
+
+        .awareness-video {
+            margin-top: 10px;
+            text-align: center; /* Center the video */
+            transition: transform 0.3s; /* Smooth transition for video */
+        }
+
+        .awareness-video:hover {
+            transform: scale(1.05); /* Scale video on hover */
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px; /* Increased margin for footer spacing */
+            border-top: 1px solid #ccc;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <%= user.username %></h1>
+
+    <div class="container">
+        <div class="actions">
+            <form action="/user/dashboard/camps">
+                <button type="submit">Show Upcoming Camps</button>
+            </form>
+
+            <form action="/user/dashboard/donate">
+                <button type="submit">Donate Blood</button>
+            </form>
+
+            <form action="/user/dashboard/appointments">
+                <button type="submit">Show Appointments</button>
+            </form>
+        </div>
+
+        <div class="awareness">
+            <h2>Daily Awareness</h2>
+            <% if (awarenessMessage) { %>
+                <p><%= awarenessMessage.message %></p>
+                <% if (awarenessMessage.videoUrl) { %>
+                    <div class="awareness-video">
+                        <iframe 
+                            width="100%" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/<%= awarenessMessage.videoUrl.split('v=')[1] %>" 
+                            frameborder="0" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                <% } else { %>
+                    <p>No video available.</p>
+                <% } %>
+            <% } else { %>
+                <p>No awareness message available.</p>
+            <% } %>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Contact Us: bloodline@example.com</p>
+            <p>Phone: +91 9630930111</p>
+            <p>Address: 123 Blood Line, Indore, India</p>
+            <p>© 2024 Blood Management System</p>
+        </div>
+        <div class="footer-links">
+            <a href="/about">About Us</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>

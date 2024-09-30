@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #C72C41;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #C72C41;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #A52032;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <%= admin.username %></h1>
+
+    <a href="/admin/manage-volunteers">
+        <button>Manage Volunteers</button>
+    </a>
+    
+    <a href="/admin/add-volunteer">
+        <button>Add New Volunteer</button>
+    </a>
+    
+    <a href="/admin/add-hospital">
+        <button>Add New Hospital</button>
+    </a>
+    
+    <a href="/admin/show-stock">
+        <button>Show Blood Stock</button>
+    </a>
+
+    <form action="/admin/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

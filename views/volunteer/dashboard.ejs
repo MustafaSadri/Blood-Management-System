@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Dashboard</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F9F9F9;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #C72C41;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #C72C41;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #A82333; /* Darker shade on hover */
+        }
+
+        /* Optional: Add some spacing between buttons */
+        button + button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <%= volunteer.username %></h1>
+    <p>This is your volunteer dashboard.</p>
+
+    <a href="/volunteer/add-camp">
+        <button>Add New Blood Camp</button>
+    </a>
+    <a href="/volunteer/show-stock">
+        <button>Show Blood Stock</button>
+    </a>
+    <a href="/volunteer/manage-stock">
+        <button>Manage Blood Stock</button>
+    </a>
+    <a href="/volunteer/show-hospitals-request">
+        <button>Show Hospital Requests</button>
+    </a>
+    <a href="/volunteer/add-awareness">
+        <button>Inform Users About Blood Donation</button>
+    </a>
+</body>
+</html>
